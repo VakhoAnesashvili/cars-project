@@ -1,0 +1,12 @@
+{% extends 'car/base.html' %}
+
+{% block title %}Delete Car{% endblock %}
+
+{% block content %}
+<h2>Are you sure you want to delete "{{ object.brand }} {{ object.model }}"?</h2>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm Delete</button>
+</form>
+<a href="{% url 'car-list' %}">Cancel</a>
+{% endblock %}
