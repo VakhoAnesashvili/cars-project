@@ -4,18 +4,29 @@
 
 {% block content %}
 <h2>Car Detail</h2>
-<p><strong>Brand:</strong> {{ object.brand }}</p>
-<p><strong>Model:</strong> {{ object.model }}</p>
-<p><strong>Year:</strong> {{ object.model_year }}</p>
-<p><strong>Engine:</strong> {{ object.engine }}</p>
-<p><strong>Fuel Type:</strong> {{ object.fuel_type }}</p>
-<p><strong>Odometer:</strong> {{ object.odometer }}</p>
-{% if object.image %}
-    <img src="{{ object.image.url }}" alt="Car Image">
-{% else %}
-    <p>No image available.</p>
-{% endif %}
-<a href="{% url 'car-update' object.pk %}">Edit</a> |
-<a href="{% url 'car-delete' object.pk %}">Delete</a> |
-<a href="{% url 'car-list' %}">Back to List</a>
+<div class='car-detail'>
+    <div class='car-img'>
+        {% if object.image %}
+        <img src="{{ object.image.url }}" >
+    {% else %}
+        <p>No image available.</p>
+    {% endif %}
+    </div>
+    <div class='car-info'>
+        <p><strong>Brand:</strong> {{ object.brand }}</p>
+        <p><strong>Model:</strong> {{ object.model }}</p>
+        <p><strong>Year:</strong> {{ object.model_year }}</p>
+        <p><strong>Engine:</strong> {{ object.engine }}</p>
+        <p><strong>Fuel Type:</strong> {{ object.fuel_type }}</p>
+        <p><strong>Odometer:</strong> {{ object.odometer }}</p>
+    </div>
+    
+
+</div>
+<div class= 'crud-detail'>
+    <a class='CRUD-link'href="{% url 'car-update' object.pk %}">Edit</a> |
+    <a class='CRUD-link'href="{% url 'car-delete' object.pk %}">Delete</a> |
+    <a class='CRUD-link'href="{% url 'car-list' %}">Back to List</a>
+</div>
+
 {% endblock %}

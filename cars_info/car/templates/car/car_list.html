@@ -3,26 +3,44 @@
 {% block title %}Car List{% endblock %}
 
 {% block content %}
-<h2>Car List</h2>
+
+{% comment %} car filter form {% endcomment %}
+<form class='search' method="get" action="">
+    {{ filter_form.as_p }}
+    <button class= 'filter-btn'type="submit">Filter</button>
+</form>
 <table>
     <thead>
         <tr>
+            <th>Image</th>
             <th>Brand</th>
             <th>Model</th>
             <th>Year</th>
-            <th>Actions</th>
+            <th>Odometer</th>
         </tr>
     </thead>
     <tbody>
+        
         {% for car in object_list %}
         <tr>
+            <td>
+                {% if car.image %}
+                {% comment %} car images and style {% endcomment %}
+                   <a> <img src="{{ car.image.url }}" style="width: 100px; height: auto;"></a>
+                {% else %}
+                    <p>No image available.</p>
+                {% endif %}
+            </td>
             <td>{{ car.brand }}</td>
             <td>{{ car.model }}</td>
             <td>{{ car.model_year }}</td>
+            <td>{{ car.odometer }}</td>
+
+            
             <td>
-                <a href="{% url 'car-detail' car.pk %}">View</a> |
-                <a href="{% url 'car-update' car.pk %}">Update</a> |
-                <a href="{% url 'car-delete' car.pk %}">Delete</a>
+                <a class='CRUD-link'href="{% url 'car-detail' car.pk %}">View</a> |
+                <a class='CRUD-link'href="{% url 'car-update' car.pk %}">Update</a> |
+                <a class='CRUD-link'href="{% url 'car-delete' car.pk %}">Delete</a>
             </td>
         </tr>
         {% endfor %}

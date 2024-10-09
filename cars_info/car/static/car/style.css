@@ -1,0 +1,113 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+form {
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="submit"],
+
+button {
+  padding: 10px;
+  margin: 10px;
+}
+
+img {
+  width: 100px;
+  height: auto;
+}
+
+.car-link {
+  color: blue;
+  font-size: 2rem;
+  padding: 15px;
+  text-decoration: none;
+}
+.car-display{
+    padding-left: 50px;
+}
+
+.search {
+  display: flex;
+}
+
+.filter-btn {
+  background-color: blue;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 25px;
+  color: white;
+}
+
+.CRUD-link{
+    background-color: rgb(29, 210, 29);
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.car-detail{
+    text-align: center;
+    display: flex;
+    margin-left: 30%;
+    margin-right: 20%;
+
+    padding-left: 20px;
+    
+}
+.car-img >img{
+    width: 300px;
+    height: auto;
+    padding-top: 20px;
+    
+
+}
+.car-info{
+    padding-left: 30px;
+}
+.crud-detail{
+    margin-left: 30%;
+    margin-top: 20px;
+}

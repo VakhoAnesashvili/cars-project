@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Car Management{% endblock %}</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Caru{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'car/style.css' %}" />
+  </head>
+  <body>
     <header>
-        <h1>Car Management System</h1>
-        <nav>
-            <a href="{% url 'car-list' %}">Car List</a>
-            <a href="{% url 'car-create' %}">Add New Car</a>
-        </nav>
+      <nav class="car-display">
+        <h1 class="car-link">Caru</h1>
+        <a class="car-link" href="{% url 'car-list' %}">Car List</a>
+        <a class="car-link" href="{% url 'car-create' %}">Add New Car</a>
+      </nav>
     </header>
-    
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-</body>
+
+    <main>{% block content %}{% endblock %}</main>
+  </body>
 </html>
