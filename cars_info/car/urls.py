@@ -1,7 +1,6 @@
 from django.urls import path
 from .views import CarListView, CarCreateView, CarDetailView, CarUpdateView, CarDeleteView
-# from django.conf import settings
-# from django.conf.urls.static import static
+
 urlpatterns = [
     path('create/', CarCreateView.as_view(),name='car-create'),
     path('', CarListView.as_view(),name='car-list'),

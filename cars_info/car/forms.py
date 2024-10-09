@@ -8,5 +8,4 @@ class CarForm(forms.ModelForm):
         
 
 class CarFilterForm(forms.Form):
-
     search = forms.CharField(required=False) 
